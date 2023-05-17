@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ShopZada - The Online Shopping Site</title>
+        <meta charset="utf-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            html{
+                height: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+            body{
+                width: 100%;
+                height: 100%;
+            }
+            nav{
+                background-image: linear-gradient(to right, #ee4d2d,#ff0091 ,#0304ab);
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 6;
+                padding: 15px;
+            }
+            #contentorder{
+                width: 70%;
+                padding: 1%;
+                float: left;
+            }
+            #tableorder{
+                width: 30%;
+                padding: 1%;
+                float: left;
+            }
+            p.upped{
+                margin-bottom: 5px;
+                margin-top: 5px;
+                
+            }
+            p, h1, h2, h3, h4, h5, h6{
+                margin: 0;
+            }
+            table{
+                width: 100%;
+            }
+            td.styled{
+                width: 16.1%;
+                margin: 0.25%;
+                float: left;
+                min-height: auto;
+                background-color: antiquewhite;
+                border: 2px solid black;
+                padding: 0.5%;
+                color: #000;
+                font-style: oblique;
+                font-weight: bold;
+            }
+            td.order{
+                background-color: rgb(211, 208, 205);
+                padding: 1%;
+                border: 1.5px solid #000
+
+            }
+            img{
+                width: 100%;
+                height: auto;
+                border-radius: 15px;
+                border: 2px solid #000;
+            }
+            .bufferdiv{
+                height: 25px;
+                width: 100%;
+                background-color: #000;
+            }
+            #technologytab, #appliances{
+                width: 100%;
+                background-image: linear-gradient(to bottom right, rgb(79, 96, 209), rgb(77, 207, 207));
+                color: #fff;
+                padding: 1%;
+                height: auto;
+            }
+            #school, #toysforu{
+                width: 100%;
+                background-image: linear-gradient(to bottom right, rgb(237, 125, 21), rgb(221, 140, 26));
+                padding: 1%;
+                height: auto;
+                color: #fff;
+            }
+            #lol{
+                width: 100%;
+                padding: 15px;
+
+            }
+            .nope{
+                    visibility: hidden;
+                }
+            @media only screen and (min-width: 768px) and (max-width: 1440px){
+                td.styled{
+                    width: 32.8%;
+                }
+                #contentorder{
+                    float: none;
+                    width: 100%;
+                }
+                #tableorder{
+                    width: 100%;
+                    float: none;
+                }
+                .nope{
+                    display: none;
+                }
+            }
+            @media only screen and (max-width: 767px){
+                td.styled{
+                    width: 49.5%;
+                }
+                #contentorder{
+                    float: none;
+                    width: 100%;
+                }
+                #tableorder{
+                    width: 100%;
+                    float: none;
+                }
+                .nope{
+                    display: none;
+                }
+            }
+            a{
+                text-decoration: none;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <h2 style="float: left; color: #fff; font-size: 42px;"><a href="index.html">ShopZada</a></h2>
+            <span style="float: right; margin-left: 15px;"><a href="devs.html"><i class="fa fa-user" style="font-size:48px;color:#fff"></i></a></span>
+            <span style="float: right;"><a href="#cartdirect"><i class="fa fa-shopping-cart" style="font-size:48px;color:#fff"></i></a></span>
+        </nav>
+        <div id="test"></div>
+        <div id="lol">
+            <h1>HEHE</h1>
+        </div>
+        <div class="bufferdiv">
+
+        </div>
+        <div id="technologytab">
+            <h2>Gadgets</h2>
+            <br>
+                <table>
+                    <tr>
+                        <td class="styled">
+                            <img src="ASUSVIVOBOOK.png" alt="asus_vivobook">
+                            <p class="upped">ASUS VivoBook<br>Php 29,999.00</p>
+                            <button onclick="addTech1()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="IPHONE14PROMAX.png" alt="IPhone14_Pro_Max">
+                            <p class="upped">IPhone 14 Pro Max<br>Php 69,999.00</p>
+                            <button onclick="addTech2()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="SAMSUNGGALAXYS23ULTRA.png" alt="Samsung_Galaxy_S23_Ultra">
+                            <p class="upped">Samsung Galaxy S23 Ultra<br>Php 88,999.00</p>
+                            <button onclick="addTech3()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="JBLWIRELESSHEADPHONES.png" alt="JBL_Wireless_Headphones">
+                            <p class="upped">JBL Wireless Headphones<br>Php 3,699.00</p>
+                            <button onclick="addTech4()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="NINTENDOSWITCH.png" alt="Nintendo_Switch">
+                            <p class="upped">Nintendo Switch<br>Php 15,999.00</p>
+                            <button onclick="addTech5()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="IPADPRO3RDGEN.png" alt="IPad_Pro_3rd_Gen">
+                            <p class="upped">IPad Pro (3rd Generation)<br>Php 87,999.00</p>
+                            <button onclick="addTech6()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                    </tr>
+                </table>
+        </div>
+        <div class="bufferdiv">
+
+        </div>
+        <div id="school">
+            <h2>School Supplies</h2>
+            <br>
+                <table>
+                    <tr>
+                        <td class="styled">
+                            <img src="PENCILS.png" alt="Pencils_(12_Pcs)">
+                            <p class="upped">Pencils (12 Pieces)<br>Php 79.00</p>
+                            <button onclick="addSchool1()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="PENS.png" alt="Pens_(12_Pcs)">
+                            <p class="upped">Pens (12 Pieces)<br>Php 99.00</p>
+                            <button onclick="addSchool2()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="A4PAPER.png" alt="A4_Paper_(500_Pcs)">
+                            <p class="upped">A4 Paper (500 Pieces)<br>Php 259.00</p>
+                            <button onclick="addSchool3()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="PENCILCASE.png" alt="Pencil_Case">
+                            <p class="upped">Pencil Case<br>Php 769.00</p>
+                            <button onclick="addSchool4()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="PENCILSHARPENER.png" alt="Pencil_Sharpener">
+                            <p class="upped">Pencil Sharpener<br>Php 419.00</p>
+                            <button onclick="addSchool5()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="SCIENTIFICCALCULATOR.png" alt="Scientific_Calculator">
+                            <p class="upped">Scientific Calculator<br>Php 989.00</p>
+                            <button onclick="addSchool6()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                    </tr>
+                </table>
+
+        </div>
+        <div class="bufferdiv">
+            
+        </div>
+        <div id="appliances">
+            <h2>Kitchenware</h2>
+            <br>
+                <table>
+                    <tr>
+                        <td class="styled">
+                            <img src="BREADTOASTER.png" alt="Bread_Toaster">
+                            <p class="upped">Bread Toaster<br>Php 829.00</p>
+                            <button onclick="addAppli1()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="DOUBLEGASSTOVE.png" alt="Double_Gas_Stovetop">
+                            <p class="upped">Double Gas Stovetop<br>Php 3,299.00</p>
+                            <button onclick="addAppli2()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="BLENDER.png" alt="Blender">
+                            <p class="upped">Blender<br>Php 859.00</p>
+                            <button onclick="addAppli3()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="BUILTINOVEN.png" alt="Built-In_Oven">
+                            <p class="upped">Built-In Oven<br>Php 8,299.00</p>
+                            <button onclick="addAppli4()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="AIRFRYER.png" alt="Air_Fryer">
+                            <p class="upped">Air Fryer<br>Php 999.00</p>
+                            <button onclick="addAppli5()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="PANSANDPOTS.png" alt="Pans_And_Pots_Set">
+                            <p class="upped">Pans(3) And Pots(3) Set<br>Php 2,199.00</p>
+                            <button onclick="addAppli6()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                    </tr>
+                </table>
+    
+        </div>
+        <div id="bufferdiv">
+
+        </div>
+        <div id="toysforu">
+            <h2>Toys</h2>
+            <br>
+                <table>
+                    <tr>
+                        <td class="styled">
+                            <img src="NERFELITE2.0EAGLEPOINT.png" alt="Nerf_Sniper_Rifle">
+                            <p class="upped">Nerf Elite 2.0 Eaglepoint<br>Php 1,399.00</p>
+                            <button onclick="addToys1()" class="btn btn-primary" id="cartdirect">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="BASKETBALL.png" alt="Basketball">
+                            <p class="upped">Basketball<br>Php 499.00</p>
+                            <button onclick="addToys2()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="FOOTBALL.png" alt="Football_(American)">
+                            <p class="upped">American Football<br>Php 359.00</p>
+                            <button onclick="addToys3()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="WATERGUN.png" alt="Water_Gun">
+                            <p class="upped">Water Gun<br>Php 299.00</p>
+                            <button onclick="addToys4()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="FRISBEE.png" alt="Frisbee (5 Pieces)">
+                            <p class="upped">Frisbee (5 Pieces)<br>Php 399.00</p>
+                            <button onclick="addToys5()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                        <td class="styled">
+                            <img src="YOYO.png" alt="YoYo">
+                            <p class="upped">Yo-Yo<br>Php 379.00</p>
+                            <button onclick="addToys6()" class="btn btn-primary">Add to Cart</button>
+                        </td>
+                    </tr>
+                </table>
+            
+        </div>
+        <div class="bufferdiv">
+
+        </div>
+        <div id="contentorder">
+            <h2>Cart</h2><br>
+            <form action="http://sirjm.infinityfreeapp.com/checkout.php" method="get">
+                <label for="TheName"><strong>Customer's Name:</strong></label>
+                <input type="text" id="TheName" name="cust_name" class="form-control" required placeholder="Input your name"><br>
+                <label for="TheAddr"><strong>Customer's Address:</strong></label>
+                <input type="text" id="TheAddr" name="cust_addr" class="form-control" required placeholder="Input your address to ship to"><br>
+                <label for="TheEmail"><strong>Customer's Email:</strong></label>
+                <input type="text" id="TheEmail" name="cust_email" class="form-control" required placeholder="Input your email"><br>
+                <input type="submit" class="btn btn-primary" value="Order">
+                <input style="display: none" id="orders" name="cust_order">
+            </form>
+        </div>
+        <div id="tableorder">
+            <h2 class="nope">&nbsp;</h2><br>
+            <table id="cart">
+                <tr>
+                    <td style="float: right;">Php <span id="totalcost">0</span>.00</td>
+                </tr>
+                <tr id="buffer">
+                    <td style="text-align: center;">Nothing inside the cart yet. Wanna add some?</td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            var a = 0;
+            var totalcost = 0;
+            var ordershopzada = []
+            function addTech1() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">ASUS VivoBook<span style='float: right;'>Php 29,999.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "ASUS VivoBook", "prod_price": 29999.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 29999;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+            }
+            function addTech2() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">IPhone 14 Pro Max<span style='float: right;'>Php 69,999.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "IPhone 14 Pro Max", "prod_price": 69999.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 69999;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function addTech3() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">Samsung Galaxy S23 Ultra<span style='float: right;'>Php 88,999.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "Samsung Galaxy S23 Ultra", "prod_price": 88999.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 88999;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function addTech4() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">JBL Wireless Headphones<span style='float: right;'>Php 3,699.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "JBL Wireless Headphones", "prod_price": 3699.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 3699;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function addTech5() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">Nintendo Switch<span style='float: right;'>Php 15,999.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "Nintendo Switch", "prod_price": 15999.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 15999;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function addTech6() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">IPad Pro (3rd Generation)<span style='float: right;'>Php 87,999.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "IPad Pro (3rd Generation)", "prod_price": 87999.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 87999;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function addSchool1() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">Pencils (12 Pieces)<span style='float: right;'>Php 49.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "Pencils (12 Pieces)", "prod_price": 49.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 49;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function addSchool2() {
+                if(ordershopzada.length <= 44){
+                    
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                document.getElementById("buffer").style.display = "none";
+                let itemid = "item" + a;
+                let item = "<tr id='" + itemid + "'><td class=\"order\">Pens (12 Pieces)<span style='float: right;'>Php 69.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                document.getElementById("cart").innerHTML += item;
+                ordershopzada.push({"prod_name": "Pens (12 Pieces)", "prod_price": 69.00});
+                const orderfunc = JSON.stringify(ordershopzada);
+                document.getElementById("orders").value = orderfunc;
+                totalcost += 69;
+                document.getElementById("totalcost").innerHTML = totalcost;
+                a++;
+            }
+            function addSchool3() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">A4 Paper (500 Pieces)<span style='float: right;'>Php 259.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "A4 Paper (500 Pieces)", "prod_price": 259.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 259;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+
+            }
+            function addSchool4() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">Pencil Case<span style='float: right;'>Php 769.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "Pencil Case", "prod_price": 769.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 769;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+
+            }
+            function addSchool5() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">Pencil Sharpener<span style='float: right;'>Php 419.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "Pencil Sharpener", "prod_price": 419.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 419;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function addSchool6() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">Scientific Calculator<span style='float: right;'>Php 989.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "Scientific Calculator", "prod_price": 989.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 989;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function addAppli1() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">Bread Toaster<span style='float: right;'>Php 829.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "Bread Toaster", "prod_price": 829.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 829;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function addAppli2() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">Double Gas Stovetop<span style='float: right;'>Php 3,299.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "Double Gas Stovetop", "prod_price": 3299.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 3299;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function addAppli3() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">Blender<span style='float: right;'>Php 859.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "Blender", "prod_price": 859.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 859;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function addAppli4() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">Built-In Oven<span style='float: right;'>Php 8,299.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "Built-In Oven", "prod_price": 8299.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 8299;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function addAppli5() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">Air Fryer<span style='float: right;'>Php 999.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "Air Fryer", "prod_price": 999.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 999;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function addAppli6() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">Pans(3) And Pots(3) Set<span style='float: right;'>Php 2,199.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "Pans(3) And Pots(3) Set", "prod_price": 2199.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 2199;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function addToys1() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">Nerf Elite 2.0 Eaglepoint<span style='float: right;'>Php 1,399.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "Nerf Elite 2.0 Eaglepoint", "prod_price": 1399.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 1399;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function addToys2() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">Basketball<span style='float: right;'>Php 499.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "Basketball", "prod_price": 499.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 499;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function addToys3() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">American Football<span style='float: right;'>Php 359.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "American Football", "prod_price": 359.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 359;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function addToys4() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">Water Gun<span style='float: right;'>Php 299.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "Water Gun", "prod_price": 299.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 299;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function addToys5() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">Frisbee (5 Pieces)<span style='float: right;'>Php 499.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "Frisbee (5 Pieces)", "prod_price": 499.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 499;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function addToys6() {
+                if(ordershopzada.length <= 44){
+                    document.getElementById("buffer").style.display = "none";
+                    let itemid = "item" + a;
+                    let item = "<tr id='" + itemid + "'><td class=\"order\">Yo-Yo<span style='float: right;'>Php 379.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
+                    document.getElementById("cart").innerHTML += item;
+                    ordershopzada.push({"prod_name": "Yo-Yo", "prod_price": 379.00});
+                    const orderfunc = JSON.stringify(ordershopzada);
+                    document.getElementById("orders").value = orderfunc;
+                    totalcost += 379;
+                    document.getElementById("totalcost").innerHTML = totalcost;
+                    a++;
+                }
+                else{
+                    alert("Max items exceeded. The maximum items purchasable per order is 45.");
+                }
+                
+            }
+            function remove(given){
+                document.getElementById(given).style.display = "none";
+            }
+            function removefromarray(i){
+                var pricedrec = ordershopzada[i]["prod_price"];
+                totalcost -= pricedrec;
+                document.getElementById("totalcost").innerHTML = totalcost;
+                ordershopzada.splice(i, 1);
+                const orderfunc = JSON.stringify(ordershopzada);
+                document.getElementById("orders").value = orderfunc;
+            }
+        </script>
+    </body>
+</html>
