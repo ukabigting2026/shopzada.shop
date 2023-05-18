@@ -458,7 +458,7 @@
                     let itemid = "item" + a;
                     let item = "<tr id='" + itemid + "'><td class=\"order\">Pencils (12 Pieces)<span style='float: right;'>Php 49.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
                     document.getElementById("cart").innerHTML += item;
-                    ordershopzada.push({"prod_name": "Pencils (12 Pieces)", "prod_price": 49.00});
+                    ordershopzada.push({"prod_name": "Pencils (12 Pieces)", "prod_price": 79.00});
                     const orderfunc = JSON.stringify(ordershopzada);
                     document.getElementById("orders").value = orderfunc;
                     totalcost += 49;
@@ -481,7 +481,7 @@
                 let itemid = "item" + a;
                 let item = "<tr id='" + itemid + "'><td class=\"order\">Pens (12 Pieces)<span style='float: right;'>Php 69.00</span><br><span style='color: red; cursor: pointer;' onclick=\"remove('"+itemid+"'), removefromarray('"+a+"')\">Remove from Cart</span></td></tr>";
                 document.getElementById("cart").innerHTML += item;
-                ordershopzada.push({"prod_name": "Pens (12 Pieces)", "prod_price": 69.00});
+                ordershopzada.push({"prod_name": "Pens (12 Pieces)", "prod_price": 99.00});
                 const orderfunc = JSON.stringify(ordershopzada);
                 document.getElementById("orders").value = orderfunc;
                 totalcost += 69;
